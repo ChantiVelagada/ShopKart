@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./components/Header";
+import { Routes, Route } from "react-router-dom";
+import HomePage from '../src/pages/HomePage';
+import CategoryPage from '../src/pages/CategoryPage';
+import ProductPage from "./pages/ProductPage";
+import CartPage from "./pages/CartPage";
+import CartComponent from './components/CartComponent';
+import PaymentForm from "./pages/PaymentPage";
+import { Toaster } from "react-hot-toast";
 
 function App() {
+
+  const [open, setOpen] = useState
+  (false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Toaster />
+      <CartComponent open={open} setOpen={setOpen}/>
+      <Header setOpen={setOpen}/>
+      
+      <div className="pt-20"> 
+      <Routes>
+        <Route path='/' element={<HomePage />}/>
+        <Route path='category/:id' element={<CategoryPage />}/>
+        <Route path='product/:id' element={<ProductPage />}/>
+        <Route path="cart" element={<CartPage />} />
+        <Route path="payment" element={<PaymentForm />} />
+      </Routes>
+      </div>
+    </>
   );
 }
 
