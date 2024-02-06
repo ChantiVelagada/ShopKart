@@ -73,7 +73,7 @@ export default function CartComponent({open,setOpen}) {
                       )
                     })}
                     <p className='mt-5 text-lg'>Total Price : ${Math.round(appContext.result*100)/100 }</p>
-                    <Link to='/payment' className='bg-blue-500 text-white block mx-auto mt-5 rounded-md px-3 py-2'>Proceed to Buy</Link>
+                    <Link to='/payment' onClick={() => setOpen(false)} className='bg-blue-500 text-white block mx-auto mt-5 rounded-md px-3 py-2'>Proceed to Buy</Link>
                     </>)}</div>
                   </div>
 

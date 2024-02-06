@@ -41,7 +41,9 @@ function ProductPage() {
             
             
             <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full"
-            onClick={() => addProductToCart(product)}>
+            onClick={() => (
+              addProductToCart(product)
+            )}>
                 Add to Cart
             </button>
         </div>
