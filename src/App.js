@@ -20,7 +20,7 @@ function App() {
       <CartComponent open={open} setOpen={setOpen}/>
       <Header setOpen={setOpen}/>
       
-      <div className="pt-20"> 
+      <div className="pt-2"> 
       <Routes>
         <Route path='/' element={<HomePage />}/>
         <Route path='category/:id' element={<CategoryPage />}/>

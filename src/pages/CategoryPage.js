@@ -24,7 +24,7 @@ function CategoryPage() {
   }, [id])
 
   return (
-    <div className='max-w-7xl mx-auto mt-8 flex flex-wrap'>
+    <div className='max-w-7xl mx-auto mt-6 flex flex-wrap justify-evenly'>
     {loading ? <p className='m-auto'>Fetching Products</p> : (
      products.map((product) => {
        return <ProductCard product={product}/>

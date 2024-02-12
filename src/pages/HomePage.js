@@ -41,7 +41,7 @@ function HomePage() {
 
   return (
     <div>
-      <form className='max-w-1 mx-auto'>
+      <form className='max-w-7xl mx-auto'>
             <div className="relative mx-20">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ function HomePage() {
                 />
             </div>
           </form>
-      <div className='max-w-7xl mx-auto mt-8 flex flex-wrap'>
+      <div className='max-w-7xl mx-auto mt-6 flex flex-wrap justify-evenly'>
         {loading ? <p className='m-auto'>Fetching Products</p> : (
           products.map((product) => {
             return <ProductCard key={product.id} product={product}/>
