@@ -1,17 +1,27 @@
 import React, { useState ,useContext} from 'react';
 import toast from 'react-hot-toast';
 import AppContext from '../context/AppContext/AppContext';
+import { useNavigate } from 'react-router-dom';
 
 const PaymentForm = () => {
-  let appContext = useContext(AppContext)
+  let appContext = useContext(AppContext);
+  const navigate = useNavigate();
   const [cardNumber, setCardNumber] = useState('');
   const [expiry, setExpiry] = useState('');
   const [cvv, setCVV] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if( cardNumber === '' || expiry === '' || cvv === '' ) {
+      toast.error('Please Enter all fields')
+    }
+
+    if( cardNumber === '' && expiry === '' && cvv === '' ) {
+      toast.success('Payment successfull')
+      navigate('/')
+    }
     
-    toast.success('Payment Succesfull')
   };
 
   return (

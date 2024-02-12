@@ -42,7 +42,7 @@ function HomePage() {
   return (
     <div>
       <form className='max-w-1 mx-auto'>
-            <div className="relative">
+            <div className="relative mx-20">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="absolute top-0 bottom-0 w-6 h-6 my-auto text-gray-400 left-3"
@@ -62,7 +62,7 @@ function HomePage() {
                     onChange={(e) => {handleSearch(e)}}
                     type="text"
                     placeholder="Search Products"
-                    className="w-full m-auto py-3 pl-12 pr-4 text-gray-500 border outline-none bg-gray-50 focus:bg-white focus:border-slate-900"
+                    className="w-full py-3 pl-12 pr-4 text-gray-500 border outline-none bg-gray-50 focus:bg-white focus:border-slate-900"
                 />
             </div>
           </form>
