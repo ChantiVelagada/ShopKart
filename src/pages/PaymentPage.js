@@ -17,9 +17,10 @@ const PaymentForm = () => {
       toast.error('Please Enter all fields')
     }
 
-    if( cardNumber === '' && expiry === '' && cvv === '' ) {
+    if( cardNumber !== '' && expiry !== '' && cvv !== '' ) {
       toast.success('Payment successfull')
       navigate('/')
+      
     }
     
   };
